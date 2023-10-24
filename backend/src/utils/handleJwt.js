@@ -18,3 +18,11 @@ export const verifyToken = (req, res, next) => {
         console.log(err);
     }
 }
+
+export const infoToken = token => {
+    try{
+        return jwt.verify(token, process.env.SECRET_KEY);
+    }catch(err){
+        console.log(err)
+    }
+}
